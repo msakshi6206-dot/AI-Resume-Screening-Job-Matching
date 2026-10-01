@@ -1,262 +1,102 @@
-\# AI Resume Screening \& Job Matching
+# AI Resume Screening & Job Matching
 
+## 📌 Overview
 
+AI Resume Screening & Job Matching is a web-based application that analyzes a candidate's resume against a given job description.
 
-\## 📌 Overview
+The system uses Machine Learning and Natural Language Processing (NLP) techniques to identify relevant skills, calculate a job match score, and provide resume analysis results.
 
+## ✨ Features
 
+* 📄 Upload resume in PDF format
+* 📝 Enter a job description
+* 🤖 AI-based resume analysis
+* 🎯 Detect relevant resume information
+* 📊 Calculate Job Match Score
+* ✅ Display matched skills
+* ❌ Display missing skills
+* 📈 Show text similarity and skill matching
+* 💻 Simple and user-friendly web interface
 
-AI Resume Screening \& Job Matching is a machine learning based project that analyzes a candidate's resume and compares it with a given job description.
+## 🛠️ Technologies Used
 
+### Frontend
 
+* HTML
+* CSS
+* JavaScript
 
-The system uses Natural Language Processing (NLP) and Machine Learning techniques to identify the resume category, detect the job role, compare skills, and calculate an overall job match score.
+### Backend
 
+* Python
+* Flask
 
+### Machine Learning & NLP
 
-\## ✨ Features
+* Scikit-learn
+* TF-IDF
+* Linear SVM
+* Natural Language Processing (NLP)
 
+## 🔄 How It Works
 
+1. User uploads a PDF resume.
+2. User enters a job description.
+3. The system extracts and processes resume information.
+4. NLP techniques are used to analyze the text.
+5. Resume and job description similarity is calculated.
+6. Relevant skills are matched.
+7. The final Job Match Score is displayed.
+8. Matched and missing skills are shown to the user.
 
-\* Upload resume in PDF format
+## 📊 Project Output
 
-\* Extract text from resume
+The application provides:
 
-\* Predict resume category using Machine Learning
+* Detected Role
+* Predicted Dataset Category
+* Job Match Score
+* Text Similarity
+* Skill Match Percentage
+* Matched Skills
+* Missing Skills
 
-\* Detect job role from the job description
+## 🖥️ Screenshots
 
-\* Match resume skills with required job skills
+### Home Page
 
-\* Identify matched and missing skills
+![Home Page](screenshots/home.png)
 
-\* Calculate job match score
+### Resume Analysis Result
 
-\* Display text similarity and skill match score
+![Analysis Result](screenshots/analysis-result.png)
 
-\* Simple web-based user interface
+### Skills Matching Result
 
+![Skills Result](screenshots/skills-result.png)
 
-
-\## 🛠️ Technologies Used
-
-
-
-\* Python
-
-\* Flask
-
-\* HTML
-
-\* CSS
-
-\* JavaScript
-
-\* Natural Language Processing (NLP)
-
-\* TF-IDF
-
-\* Linear SVM
-
-\* Scikit-learn
-
-\* PyMuPDF
-
-\* Joblib
-
-
-
-\## 🤖 Machine Learning Approach
-
-
-
-The project uses:
-
-
-
-\* \*\*TF-IDF\*\* for converting text into numerical features
-
-\* \*\*Linear SVM\*\* for resume category classification
-
-\* \*\*Cosine Similarity\*\* for comparing resume and job description text
-
-\* \*\*Rule-based role detection\*\* for identifying common job roles
-
-\* \*\*Skill matching\*\* for finding matched and missing skills
-
-
-
-\## 📊 Job Match Score
-
-
-
-The final job match score is calculated using:
-
-
-
-\*\*40% Text Similarity + 60% Skill Match\*\*
-
-
-
-The result also displays:
-
-
-
-\* Text Similarity
-
-\* Skill Match
-
-\* Matched Skills
-
-\* Missing Skills
-
-
-
-\## 📁 Project Structure
-
-
+## 📁 Project Structure
 
 ```text
-
-AI-Resume-Screening-Job-Matching/
-
+AI Resume Job Matching/
 │
-
 ├── backend/
-
-│   ├── app.py
-
-│   ├── resume\_analyzer.py
-
-│   ├── preprocessing.py
-
-│   ├── role\_detection.py
-
-│   ├── skill\_matching.py
-
-│   ├── job\_matching.py
-
-│   └── other Python modules
-
-│
-
 ├── frontend/
-
-│   ├── index.html
-
-│   ├── style.css
-
-│   └── script.js
-
-│
-
 ├── dataset/
-
-│   └── Resume/
-
-│
-
 ├── models/
-
-│   └── trained ML models
-
-│
-
 ├── results/
-
-│
-
+├── screenshots/
 ├── requirements.txt
-
 ├── .gitignore
-
 └── README.md
-
 ```
 
+## 🎯 Purpose
 
+The main purpose of this project is to demonstrate how Machine Learning and NLP can be used to assist in resume screening and job matching.
 
-\## ▶️ How It Works
+## 👩‍💻 Project
 
+**AI Resume Screening & Job Matching**
 
-
-1\. User uploads a resume PDF.
-
-2\. The system extracts the resume text.
-
-3\. The resume is preprocessed using NLP techniques.
-
-4\. The trained machine learning model predicts the resume category.
-
-5\. The system analyzes the job description.
-
-6\. The job role is detected.
-
-7\. Resume skills are compared with required skills.
-
-8\. Text similarity and skill matching are calculated.
-
-9\. The final job match score is displayed.
-
-
-
-\## 🖥️ Output
-
-
-
-The application displays:
-
-
-
-\* Detected Role
-
-\* Predicted Dataset Category
-
-\* Job Match Score
-
-\* Text Similarity
-
-\* Skill Match
-
-\* Matched Skills
-
-\* Missing Skills
-
-
-
-\## 🔮 Future Scope
-
-
-
-\* Improve job role detection
-
-\* Add more job roles and skills
-
-\* Improve resume classification accuracy
-
-\* Add advanced NLP techniques
-
-\* Add resume recommendations
-
-\* Deploy the application online
-
-\* Add a more advanced recommendation system
-
-
-
-\## 👩‍💻 Author
-
-
-
-\*\*Sakshi Mistry\*\*
-
-
-
-M.Sc. IT Student
-
-
-
-This project was developed as a personal learning and portfolio project to apply concepts of Machine Learning, NLP, and web development.
-
-
-
+Built using Machine Learning, NLP and Flask.
