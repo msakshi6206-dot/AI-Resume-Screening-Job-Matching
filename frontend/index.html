@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>AI Resume Screening & Job Matching</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="ai-logo">
+            AI
+        </div>
+
+        <h1>
+            Resume Screening & Job Matching
+        </h1>
+
+        <p class="subtitle">
+            Analyze your resume against a job description using
+            <strong>AI, NLP & Machine Learning</strong>.
+        </p>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-container">
+
+        <!-- Upload Card -->
+
+        <section class="upload-card">
+
+            <div class="section-title">
+                <span class="title-icon">📄</span>
+                <h2>Resume Analysis</h2>
+            </div>
+
+
+            <!-- Resume Upload -->
+
+            <div class="form-group">
+
+                <label for="resume">
+                    Upload Resume
+                </label>
+
+                <div class="file-box">
+
+                    <input
+                        type="file"
+                        id="resume"
+                        accept=".pdf"
+                    >
+
+                </div>
+
+                <small>
+                    Only PDF files are supported.
+                </small>
+
+            </div>
+
+
+            <!-- Job Description -->
+
+            <div class="form-group">
+
+                <label for="jobDescription">
+                    Job Description
+                </label>
+
+                <textarea
+                    id="jobDescription"
+                    rows="8"
+                    placeholder="Enter the job description here..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- Analyze Button -->
+
+            <button
+                type="button"
+                id="analyzeBtn"
+                class="analyze-btn"
+            >
+                🔍 Analyze Resume
+            </button>
+
+
+            <!-- Loading -->
+
+            <div
+                id="loading"
+                class="loading"
+                style="display: none;"
+            >
+                <div class="spinner"></div>
+
+                <span>
+                    Analyzing your resume...
+                </span>
+            </div>
+
+        </section>
+
+
+        <!-- ================= ERROR ================= -->
+
+        <div
+            id="error"
+            class="error-box"
+            style="display: none;"
+        ></div>
+
+
+        <!-- ================= RESULTS ================= -->
+
+        <section
+            id="result"
+            class="result-section"
+            style="display: none;"
+        >
+
+            <h2 class="result-heading">
+                Resume Analysis Result
+            </h2>
+
+
+            <!-- Detected Role -->
+
+            <div class="result-card role-card">
+
+                <div class="result-icon purple">
+                    👤
+                </div>
+
+                <div class="result-content">
+
+                    <h3>
+                        Detected Role
+                    </h3>
+
+                    <div
+                        id="detectedRole"
+                        class="result-value"
+                    >
+                        -
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Predicted Category -->
+
+            <div class="result-card">
+
+                <div class="result-icon blue">
+                    📄
+                </div>
+
+                <div class="result-content">
+
+                    <h3>
+                        Predicted Dataset Category
+                    </h3>
+
+                    <div
+                        id="category"
+                        class="result-value"
+                    >
+                        -
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Match Score -->
+
+            <div class="score-card">
+
+                <div class="score-header">
+
+                    <div>
+
+                        <h3>
+                            Job Match Score
+                        </h3>
+
+                        <div
+                            id="matchScore"
+                            class="score"
+                        >
+                            0%
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Progress Bar -->
+
+                <div class="progress-container">
+
+                    <div
+                        id="scoreProgress"
+                        class="progress-bar"
+                        style="width: 0%;"
+                    ></div>
+
+                </div>
+
+
+                <p
+                    id="scoreMessage"
+                    class="score-message"
+                >
+                    Resume-job similarity will appear here.
+                </p>
+
+
+                <!-- Score Breakdown -->
+
+                <div class="score-breakdown">
+
+                    <div class="score-item">
+
+                        <span>
+                            Text Similarity
+                        </span>
+
+                        <strong id="textSimilarity">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="score-item">
+
+                        <span>
+                            Skill Match
+                        </span>
+
+                        <strong id="skillMatch">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Explanation -->
+
+                <div class="score-info">
+
+                    <h4>
+                        💡 How is this score calculated?
+                    </h4>
+
+                    <p>
+                        The final score combines resume-job
+                        text similarity and required skill matching.
+                    </p>
+
+                    <strong>
+                        40% Text Similarity + 60% Skill Match
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Skills -->
+
+            <div class="skills-grid">
+
+                <!-- Matched Skills -->
+
+                <div class="skills-card matched-card">
+
+                    <h3>
+                        ✓ Matched Skills
+                    </h3>
+
+                    <ul id="matchedSkills">
+                    </ul>
+
+                </div>
+
+
+                <!-- Missing Skills -->
+
+                <div class="skills-card missing-card">
+
+                    <h3>
+                        ✕ Missing Skills
+                    </h3>
+
+                    <ul id="missingSkills">
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    AI
+                </div>
+
+                <div>
+
+                    <h3>
+                        AI Resume Screening
+                    </h3>
+
+                    <p>
+                        Smart Resume Analysis & Job Matching
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-tech">
+
+                <span>Machine Learning</span>
+                <span>NLP</span>
+                <span>TF-IDF</span>
+                <span>Linear SVM</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 AI Resume Screening & Job Matching
+            </p>
+
+            <p>
+                Powered by Machine Learning & NLP
+            </p>
+
+        </div>
+
+    </footer>
+
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
